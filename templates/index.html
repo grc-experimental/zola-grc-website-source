@@ -1,0 +1,153 @@
+{% extends "base.html" %}
+
+{% block title %}{{ config.title }}{% endblock title %}
+
+{% block content %}
+<div class="page">
+
+    <!-- Left: bio / mathematical identity -->
+    <section class="bio">
+        <header class="bio-header">
+            <div class="bio-avatar">
+                <img src="{{ get_url(path='images/ProfilePic') }}" alt="Ruo-Chen Gu">
+            </div>
+            <div class="bio-heading-block">
+                <h1 class="bio-name">Ruo-Chen Gu</h1>
+                <p class="bio-tagline">Master's student in mathematics, UW–Madison</p>
+            </div>
+        </header>
+
+        <section class="bio-block">
+            <h2 class="bio-heading">Definition (Ruo-Chen Gu).</h2>
+            <p>
+                Born in Shanghai and now based in Madison, <span class="math-bold">Ruo-Chen Gu</span>
+                is a master's student in mathematics whose center of gravity lies in
+                <span class="math-bold">mathematical logic</span> and
+                <span class="math-bold">automated theorem proving</span>.
+                He also keeps active interests in analysis, algebra, and geometry/topology—broad enough
+                to navigate the major classical areas, but with logic and ATP as the main filled dot.
+            </p>
+            <p class="bio-diagram">
+                ●<span class="bio-diagram-label"> logic / ATP</span>
+                &nbsp;&nbsp;○ analysis&nbsp;&nbsp;○ algebra&nbsp;&nbsp;○ geometry/topology
+            </p>
+        </section>
+
+        <section class="bio-block">
+            <h2 class="bio-heading">Background.</h2>
+            <p>
+                Before entering mathematics properly, he completed a double major in finance and
+                computer science at New York University. The combination turned out to be surprisingly
+                natural preparation for foundations: computational instincts from CS and the skepticism
+                trained by quantitative work both fed into a long-term interest in rigor, formal systems,
+                and the possibility of delegating parts of mathematical reasoning to machines without
+                losing its conceptual core.
+            </p>
+        </section>
+
+        <section class="bio-block">
+            <h2 class="bio-heading">Research direction.</h2>
+            <p>
+                He is steadily building toward doctoral work in foundations, with an emphasis on how
+                rigorous classical mathematics interacts with formal verification and proof assistants.
+                His working heuristic is simple: if a proof can be made precise, then eventually it should
+                be precise enough for a machine to check—without ceasing to be mathematics.
+            </p>
+        </section>
+
+        <section class="bio-block">
+            <h2 class="bio-heading">Books & study.</h2>
+            <p class="bio-subheading">Analysis</p>
+            <ul class="bio-list">
+                <li>Rudin, <em>Principles of Mathematical Analysis</em> — Chapters 1–9 (Math 521–522)</li>
+                <li>Roos &amp; Seeger, <em>Real Analysis</em> (draft)</li>
+                <li>Folland, <em>Real Analysis</em> — current study for Math 629</li>
+            </ul>
+
+            <p class="bio-subheading">Algebra / linear algebra</p>
+            <ul class="bio-list">
+                <li>Dummit &amp; Foote — Chapters 1–14</li>
+                <li>Axler, <em>Linear Algebra Done Right</em> — full book</li>
+                <li>Hungerford, <em>Algebra</em></li>
+                <li>Atiyah–MacDonald — upcoming in Math 742</li>
+            </ul>
+
+            <p class="bio-subheading">Topology / geometry</p>
+            <ul class="bio-list">
+                <li>Munkres — Chapters 1–9</li>
+                <li>Hatcher, <em>Algebraic Topology</em> — upcoming in Math 552</li>
+            </ul>
+
+            <p class="bio-subheading">Logic / set theory / model theory</p>
+            <ul class="bio-list">
+                <li>Enderton, <em>Elements of Set Theory</em></li>
+                <li>Enderton, <em>A Mathematical Introduction to Logic</em></li>
+                <li>Mileti, <em>Modern Mathematical Logic</em></li>
+                <li>Hodge, <em>A Shorter Model Theory</em></li>
+            </ul>
+        </section>
+
+        <section class="bio-block">
+            <h2 class="bio-heading">Coursework.</h2>
+            <p class="bio-subheading">Analysis</p>
+            <p class="bio-list-inline">
+                Math 522 (Analysis 2), Math 629 (Intro Measure Theory)
+            </p>
+
+            <p class="bio-subheading">Algebra / linear algebra</p>
+            <p class="bio-list-inline">
+                Math 540 (Linear Algebra 2), 541–542 (Algebra 1–2),
+                741–742 (Graduate Algebra 1–2)
+            </p>
+
+            <p class="bio-subheading">Topology / geometry</p>
+            <p class="bio-list-inline">
+                Math 551 (Topology 1), 552 (Intro Geometric &amp; Algebraic Topology)
+            </p>
+
+            <p class="bio-subheading">Logic / foundations</p>
+            <p class="bio-list-inline">
+                Math 570 (Set Theory 1), 770 (Foundations / Intro Model Theory),
+                773 (Computability Theory), 698 (Logic independent study)
+            </p>
+        </section>
+
+        <section class="bio-block">
+            <h2 class="bio-heading">Experience.</h2>
+            <p>
+                In 2025 he attended the SLMath Summer Graduate School on
+                <em>Computer-Assisted Proof in Applied Mathematics</em>, where exposure to rigorous
+                numerics and formal verification strengthened his interest in the interface between
+                analysis and machine-checked reasoning.
+            </p>
+        </section>
+
+        <section class="bio-block">
+            <h2 class="bio-heading">Closing note.</h2>
+            <p class="bio-epigraph">
+                He enjoys rewriting definitions that were “nearly right” the first time, and treats the
+                pursuit of rigor as an ongoing—and occasionally mischievous—companion.
+            </p>
+        </section>
+    </section>
+
+    <!-- Right: terminal column -->
+    <section class="terminal-column">
+        <div id="terminal" class="terminal">
+            <div id="terminal-body">
+                <div id="terminal-output"></div>
+                <div class="terminal-line terminal-input-line">
+                    <span class="prompt">grc@⊢:~$</span>
+                    <span id="terminal-input" class="input" aria-label="terminal input"></span>
+                    <span class="cursor"></span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+</div>
+{% endblock content %}
+
+{% block extra_scripts %}
+<script src="{{ get_url(path='js/terminal.js') }}"></script>
+{% endblock extra_scripts %}

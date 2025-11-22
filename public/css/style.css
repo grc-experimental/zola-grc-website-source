@@ -1,0 +1,343 @@
+/* Global reset-ish */
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    background-color: #050608;
+    color: #e5e7eb;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+        sans-serif;
+}
+
+main {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+.page {
+    width: 100%;
+    max-width: 1120px;
+    margin: 3rem 1.5rem;
+    display: flex;
+    gap: 2.5rem;
+
+    padding-right: min(40vw, 36rem); /* reserve space for the fixed terminal */
+}
+
+/* Left column: bio */
+.bio {
+    flex: 1 1 45%;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+/* Bio header with avatar */
+.bio-header {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 0.5rem;
+}
+
+.bio-avatar {
+    width: 72px;
+    height: 72px;
+    border-radius: 999px;
+    overflow: hidden;
+    flex-shrink: 0;
+    border: 1px solid #1f2933;
+}
+
+.bio-avatar img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.bio-heading-block {
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+}
+
+.bio-name {
+    margin: 0;
+    font-size: 2rem;
+    letter-spacing: 0.03em;
+    color: #f9fafb;
+}
+
+.bio-tagline {
+    margin: 0;
+    font-size: 0.95rem;
+    color: #9ca3af;
+}
+
+/* Bio blocks */
+.bio-block {
+    border-left: 2px solid #1f2933;
+    padding-left: 1rem;
+}
+
+.bio-heading {
+    margin: 0 0 0.3rem;
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: #6b7280;
+}
+
+.bio-block p {
+    margin: 0.35rem 0 0.45rem;
+    font-size: 0.95rem;
+    line-height: 1.5;
+    color: #d1d5db;
+}
+
+.bio-diagram {
+    margin-top: 0.2rem;
+    font-size: 0.9rem;
+    color: #9ca3af;
+}
+
+.bio-diagram-label {
+    margin-left: 0.25rem;
+}
+
+.bio-subheading {
+    margin: 0.5rem 0 0.1rem;
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: #9ca3af;
+}
+
+.bio-list {
+    margin: 0.2rem 0 0.4rem 1.1rem;
+    padding: 0;
+    font-size: 0.93rem;
+    line-height: 1.5;
+    color: #d1d5db;
+}
+
+.bio-list li {
+    margin: 0.05rem 0;
+}
+
+.bio-list-inline {
+    margin: 0.2rem 0 0.3rem;
+    font-size: 0.93rem;
+    line-height: 1.5;
+    color: #d1d5db;
+}
+
+.bio-epigraph {
+    margin-top: 0.3rem;
+    font-style: italic;
+    font-size: 0.9rem;
+    color: #9ca3af;
+}
+
+/* Simple "math" typography */
+.math,
+.math-bold {
+    font-family: "Iosevka", "Fira Code", Menlo, Consolas, monospace;
+}
+
+.math-bold {
+    font-weight: 600;
+}
+
+/* Right column: fixed terminal on desktop */
+.terminal-column {
+    position: fixed;
+    right: 8vw;
+    top: 50vh;
+
+    /* base transform + small animated offset */
+    --hover-offset: 0px;
+    transform: translateY(calc(-50% + var(--hover-offset)));
+    transition: transform 180ms ease-out;
+
+    width: min(36rem, 40vw);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    pointer-events: none;   /* terminal itself gets events */
+}
+
+
+/* Terminal shell: seamless panel with RGB halo */
+.terminal {
+    background: transparent;      /* inner panel handled by ::after */
+    border-radius: 14px;
+    width: 100%;
+    height: 70vh;
+    max-height: 70vh;
+
+    padding: 0;
+    border: none;                 /* border comes from halo + inner shadow */
+    overflow: hidden;
+
+    display: flex;
+    pointer-events: auto;
+
+    position: relative;
+    z-index: 0;
+}
+
+/* Continuous RGB border + dark interior */
+.terminal::before,
+.terminal::after {
+    content: "";
+    position: absolute;
+    border-radius: inherit;
+    z-index: -1;
+}
+
+/* Outer RGB halo */
+.terminal::before {
+    inset: -8px;  /* how far outside the box the halo extends */
+    background: conic-gradient(
+        from 0deg,
+        #ff005e,
+        #ff9900,
+        #ffee00,
+        #33ff00,
+        #00ffee,
+        #007bff,
+        #9c27ff,
+        #ff005e
+    );
+    animation: rgb-border-spin 16s linear infinite;
+}
+
+/* Inner dark panel that carves out the middle */
+.terminal::after {
+    inset: 4px;  /* controls visible border thickness: here ≈ 12px */
+    background: radial-gradient(circle at top left, #020617, #02040a 55%);
+    box-shadow:
+        0 0 0 1px rgba(15, 23, 42, 0.9),
+        0 0 26px rgba(15, 23, 42, 0.8);
+}
+
+/* Slow spin */
+@keyframes rgb-border-spin {
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+
+
+
+/* Terminal body */
+#terminal-body {
+    padding: 1rem 1.2rem 1.1rem;
+    background-color: transparent;
+    font-family: "Fira Code", Menlo, Consolas, monospace;
+    font-size: 0.9rem;
+    color: #e5e7eb;
+
+    flex: 1;
+    min-height: 0;
+    overflow-y: auto;   /* scroll inside the panel when output is long */
+}
+
+/* Lines and output */
+#terminal-output {
+    margin-bottom: 0.2rem;
+}
+
+.terminal-line,
+.terminal-output-line {
+    display: flex;
+    align-items: baseline;
+    white-space: pre-wrap;
+    word-break: break-word;
+    line-height: 1.4;
+}
+
+.terminal-input-line {
+    margin-top: 0.4rem;
+}
+
+.prompt {
+    color: #5fd7ff;
+    margin-right: 0.4rem;
+}
+
+.input {
+    color: #f9fafb;
+}
+
+/* Cursor */
+.cursor {
+    display: inline-block;
+    width: 8px;
+    height: 1.1em;
+    background-color: #e5e7eb;
+    margin-left: 2px;
+    animation: blink 1s steps(2, start) infinite;
+    position: relative;
+    top: 0.12em; /* nudge so it sits on baseline */
+}
+
+@keyframes blink {
+    to {
+        visibility: hidden;
+    }
+}
+
+/* System / info messages */
+.terminal-output-line.system {
+    color: #9ca3af;
+}
+
+.terminal-output-line.error {
+    color: #f87171;
+}
+
+/* Links inside terminal */
+#terminal-output a {
+    color: #86efac;
+    text-decoration: none;
+}
+
+#terminal-output a:hover {
+    text-decoration: underline;
+}
+
+/* Responsive: stack columns on smaller screens */
+@media (max-width: 900px) {
+    .page {
+        flex-direction: column;
+        margin-top: 2rem;
+        margin-bottom: 2rem;
+        padding-right: 0;
+    }
+
+    .terminal-column {
+        position: static;
+        transform: none;
+        --hover-offset: 0px;
+        width: 100%;
+        justify-content: center;
+        pointer-events: auto;
+    }
+
+    .terminal {
+        height: auto;
+        max-height: none;
+    }
+}
