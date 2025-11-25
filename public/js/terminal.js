@@ -1,5 +1,27 @@
 const PROMPT = "grc@⊢:~$";
 
+// Multiline ASCII banner.
+const ASCII_BANNER = [
+  "  ________                      ",
+  " /  _____/ __ __                ",
+  "/   \\  ___|  |  \\               ",
+  "\\    \\_\\  \\  |  /               ",
+  " \\______  /____/                ",
+  "        \\/                      ",
+  "__________                      ",
+  "\\______   \\__ __  ____          ",
+  " |       _/  |  \\/  _ \\         ",
+  " |    |   \\  |  (  <_> )        ",
+  " |____|_  /____/ \\____/         ",
+  "        \\/                      ",
+  "_________ .__                   ",
+  "\\_   ___ \\|  |__   ____   ____  ",
+  "/    \\  \\/|  |  \\_/ __ \\ /    \\ ",
+  "\\     \\___|   Y  \\  ___/|   |  \\",
+  " \\______  /___|  /\\___  >___|  /",
+  "        \\/     \\/     \\/     \\/ ",
+];
+
 const terminalOutput = document.getElementById("terminal-output");
 const terminalInput = document.getElementById("terminal-input");
 
@@ -274,11 +296,63 @@ if (terminalColumn) {
   });
 }
 
-// Initial greeting
+// Bio cards: vertical index switching
+function initBioCards() {
+  const navItems = document.querySelectorAll(".bio-nav-item");
+  const cards = document.querySelectorAll(".bio-card");
+
+  if (!navItems.length || !cards.length) {
+    return;
+  }
+
+  function setActiveCard(key) {
+    // Toggle nav pills
+    navItems.forEach((btn) => {
+      if (btn.dataset.card === key) {
+        btn.classList.add("bio-nav-item--active");
+      } else {
+        btn.classList.remove("bio-nav-item--active");
+      }
+    });
+
+    // Toggle cards
+    cards.forEach((card) => {
+      if (card.dataset.card === key) {
+        card.classList.add("bio-card--active");
+      } else {
+        card.classList.remove("bio-card--active");
+      }
+    });
+  }
+
+  // Attach handlers
+  navItems.forEach((btn) => {
+    btn.addEventListener("click", () => {
+      const key = btn.dataset.card;
+      if (!key) {
+        return;
+      }
+      setActiveCard(key);
+    });
+  });
+}
+
+
+
+
+
 function initTerminal() {
   if (!terminalOutput || !terminalInput) {
     return;
   }
+
+  // ASCII banner at top
+  ASCII_BANNER.forEach((line) => {
+    printLine(line, { className: "banner" });
+  });
+
+  // Optional blank line after the banner
+  printLine("", { className: "banner" });
 
   printLine("grc@⊢:~   —   notes in analysis, logic, ATP", { className: "system" });
   printLine("Welcome to grc's terminal.", { className: "system" });
@@ -290,3 +364,4 @@ function initTerminal() {
 }
 
 initTerminal();
+initBioCards();

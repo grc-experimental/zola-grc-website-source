@@ -23,13 +23,15 @@ main {
 
 .page {
     width: 100%;
-    max-width: 1120px;
-    margin: 3rem 1.5rem;
+    max-width: 1550px;              /* use more of the left side */
+    margin: 3rem auto;
     display: flex;
     gap: 2.5rem;
 
-    padding-right: min(40vw, 36rem); /* reserve space for the fixed terminal */
+    /* reserve more than the terminal width, leaving a clear gap */
+    padding-right: min(48vw, 48rem);
 }
+
 
 /* Left column: bio */
 .bio {
@@ -147,6 +149,110 @@ main {
     color: #9ca3af;
 }
 
+/* Bio: card deck layout */
+
+.bio-layout {
+    display: grid;
+    grid-template-columns: auto minmax(0, 1fr);
+    align-items: stretch;
+    gap: 1.5rem;
+    margin-top: 1.25rem;
+}
+
+/* Vertical index rail */
+
+.bio-nav {
+    display: flex;
+    flex-direction: column;
+    gap: 0.35rem;
+    align-items: flex-start;
+}
+
+.bio-nav-item {
+    border: 1px solid #1f2933;
+    background: #020617;
+    color: #9ca3af;
+    font-size: 0.7rem;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    padding: 0.35rem 0.6rem;
+    border-radius: 999px;
+    cursor: pointer;
+    transition:
+        background 0.15s ease,
+        color 0.15s ease,
+        transform 0.12s ease,
+        border-color 0.15s ease;
+}
+
+.bio-nav-item:hover {
+    transform: translateX(2px);
+    border-color: #22c55e;
+    color: #e5e7eb;
+}
+
+.bio-nav-item--active {
+    background: radial-gradient(
+        circle at top,
+        rgba(34, 197, 94, 0.24),
+        rgba(34, 197, 94, 0.02)
+    );
+    border-color: #22c55e;
+    color: #e5e7eb;
+    transform: translateX(2px);
+}
+
+/* Cards */
+
+.bio-cards {
+    position: relative;
+    min-height: 260px; /* keeps layout stable while switching */
+}
+
+.bio-card {
+    display: none;
+    padding: 1.25rem 1.4rem;
+    border-radius: 0.9rem;
+    border: 1px solid #1f2933;
+    background: radial-gradient(
+        circle at top left,
+        rgba(148, 163, 184, 0.12),
+        rgba(15, 23, 42, 0.9)
+    );
+    box-shadow: 0 18px 45px rgba(0, 0, 0, 0.45);
+    transition:
+        opacity 0.18s ease,
+        transform 0.18s ease;
+    opacity: 0;
+    transform: translateX(-4px);
+}
+
+.bio-card--active {
+    display: block;
+    opacity: 1;
+    transform: translateX(0);
+}
+
+/* Small tweaks for card content */
+
+.bio-card .bio-heading {
+    margin-top: 0;
+}
+
+.bio-card .bio-list {
+    margin-top: 0.2rem;
+    margin-bottom: 0.7rem;
+}
+
+.bio-card .bio-subheading {
+    margin-top: 0.75rem;
+}
+
+.bio-card .bio-epigraph {
+    border-left-color: #22c55e;
+}
+
+
 /* Simple "math" typography */
 .math,
 .math-bold {
@@ -162,18 +268,17 @@ main {
     position: fixed;
     right: 8vw;
     top: 50vh;
-
-    /* base transform + small animated offset */
     --hover-offset: 0px;
     transform: translateY(calc(-50% + var(--hover-offset)));
     transition: transform 180ms ease-out;
 
-    width: min(36rem, 40vw);
+    /* was: min(36rem, 40vw) */
+    width: min(42rem, 40vw);
     display: flex;
     align-items: center;
     justify-content: center;
 
-    pointer-events: none;   /* terminal itself gets events */
+    pointer-events: none;
 }
 
 
@@ -339,5 +444,22 @@ main {
     .terminal {
         height: auto;
         max-height: none;
+    }
+
+    /* Stack nav above card on mobile */
+    .bio-layout {
+        grid-template-columns: minmax(0, 1fr);
+        row-gap: 1rem;
+    }
+
+    .bio-nav {
+        flex-direction: row;
+        flex-wrap: wrap;
+        gap: 0.4rem;
+    }
+
+    .bio-nav-item {
+        font-size: 0.65rem;
+        padding-inline: 0.5rem;
     }
 }
