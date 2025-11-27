@@ -433,9 +433,8 @@ main {
 @media (max-width: 900px) {
     .page {
         flex-direction: column;
-        margin-top: 2rem;
-        margin-bottom: 2rem;
-        padding-right: 0;
+        margin: 2rem auto;
+        padding-inline: 1.25rem;   /* padding on both left and right */
     }
 
     .terminal-column {
@@ -445,11 +444,13 @@ main {
         width: 100%;
         justify-content: center;
         pointer-events: auto;
+        margin-top: 2rem;
     }
 
+    /* cap terminal height on mobile instead of letting it grow forever */
     .terminal {
-        height: auto;
-        max-height: none;
+        height: 55vh;
+        max-height: 55vh;
     }
 
     /* Stack nav above card on mobile */
@@ -469,6 +470,7 @@ main {
         padding-inline: 0.5rem;
     }
 }
+
 
 
 
