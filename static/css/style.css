@@ -135,6 +135,12 @@ main {
     margin: 0.05rem 0;
 }
 
+.bio-list-label {
+    font-weight: 600;
+    color: #e5e7eb;
+    margin-right: 0.25rem;
+}
+
 .bio-list-inline {
     margin: 0.2rem 0 0.3rem;
     font-size: 0.93rem;
