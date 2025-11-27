@@ -28,8 +28,10 @@ main {
     display: flex;
     gap: 2.5rem;
 
+    padding-left: clamp(1rem, 2.25vw, 2rem);
+
     /* reserve more than the terminal width, leaving a clear gap */
-    padding-right: min(48vw, 48rem);
+    padding-right: calc(min(45rem, 45vw) + 2vw + 2rem);
 }
 
 
