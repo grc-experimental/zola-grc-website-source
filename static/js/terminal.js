@@ -95,6 +95,7 @@ function handleHelp() {
   printLine("  axioms          Show a few local axioms", { className: "system" });
   printLine("  lemma           Print a small lemma", { className: "system" });
   printLine("  about           About this site", { className: "system" });
+  printLine("  credits         Show UI credits", { className: "system" });
   printLine("  clear           Clear the screen", { className: "system" });
 }
 
@@ -139,6 +140,13 @@ function handleAbout() {
   printLine(
     "Interests: analysis, logic, set theory, automated theorem proving, Lean.",
     { className: "system" }
+  );
+}
+
+function handleCredits() {
+  printLine(
+    'Terminal UI inspired by <a href="https://terminal.jcubic.pl/" target="_blank" rel="noopener noreferrer">jQuery Terminal</a> by Jakub Jankiewicz.',
+    { className: "system", asHtml: true }
   );
 }
 
@@ -199,6 +207,9 @@ function handleCommand(rawInput) {
       break;
     case "about":
       handleAbout();
+      break;
+    case "credits":
+      handleCredits();
       break;
     case "blog":
       handleOpen("blog");
@@ -356,6 +367,10 @@ function initTerminal() {
 
   printLine("grc@⊢:~   —   notes in analysis, logic, ATP", { className: "system" });
   printLine("Welcome to grc's terminal.", { className: "system" });
+  printLine(
+    'UI largely inspired by <a href="https://terminal.jcubic.pl/" target="_blank" rel="noopener noreferrer">jQuery Terminal</a>.',
+    { className: "system", asHtml: true }
+  );
   printLine('Type "help" to see available commands.', {
     className: "system"
   });
