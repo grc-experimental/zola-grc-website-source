@@ -1,0 +1,43 @@
+{% extends "base.html" %}
+
+{% block title %}Notes — {{ config.title }}{% endblock title %}
+
+{% block content %}
+<div class="page page--blog">
+  <section class="blog">
+    <header class="blog-header">
+      <h1 class="blog-title">{{ section.title | default(value="Notes") }}</h1>
+      {% if section.description %}
+        <p class="blog-description">{{ section.description }}</p>
+      {% endif %}
+    </header>
+    
+    <a href="/" class="return-button">← Back Home</a>
+
+    {% if section.pages | length == 0 %}
+      <p class="blog-empty">No notes yet.</p>
+    {% else %}
+      <ul class="blog-list">
+        {% for page in section.pages %}
+          {% set pdf_path = page.extra.pdf | default(value="") %}
+          <li class="blog-list-item">
+            {% if pdf_path != "" %}
+              <a href="{{ get_url(path=pdf_path) }}" class="blog-list-link" download>
+            {% else %}
+              <a href="{{ page.permalink | safe }}" class="blog-list-link">
+            {% endif %}
+                <h2 class="blog-post-title">{{ page.title }}</h2>
+                <p class="blog-post-meta">
+                  {{ page.date | date(format="%Y-%m-%d") }}
+                </p>
+                {% if page.description %}
+                  <p class="blog-post-description">{{ page.description }}</p>
+                {% endif %}
+              </a>
+          </li>
+        {% endfor %}
+      </ul>
+    {% endif %}
+  </section>
+</div>
+{% endblock content %}
