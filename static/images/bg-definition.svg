@@ -1,0 +1,107 @@
+<svg width="1600" height="900" viewBox="0 0 1600 900" xmlns="http://www.w3.org/2000/svg">
+  <rect width="1600" height="900" fill="#000000"/>
+
+  <!-- ======================= LOGIC ======================= -->
+  <g id="logic-icon">
+    <circle cx="260" cy="360" r="100" stroke="#ffffff" stroke-width="6" fill="none" opacity="0.96"/>
+    <text x="260" y="372" text-anchor="middle" font-size="58" font-family="serif" fill="#ffffff" opacity="0.96">ℵ</text>
+
+    <text x="220" y="320" text-anchor="middle" font-size="30" font-family="serif" fill="#ffffff" opacity="0.9">∀</text>
+    <text x="300" y="320" text-anchor="middle" font-size="34" font-family="serif" fill="#ffffff" opacity="0.9">⊧</text>
+
+    <text x="225" y="408" text-anchor="middle" font-size="34" font-family="serif" fill="#ffffff" opacity="0.9">=</text>
+    <text x="295" y="408" text-anchor="middle" font-size="32" font-family="serif" fill="#ffffff" opacity="0.9">∃</text>
+  </g>
+
+  <!-- ======================= ANALYSIS ======================= -->
+  <g id="analysis-icon">
+    <line x1="485" y1="380" x2="555" y2="380" stroke="#ffffff" stroke-width="3" stroke-linecap="round"/>
+    <line x1="520" y1="372" x2="520" y2="388" stroke="#ffffff" stroke-width="3"/>
+
+    <line x1="505" y1="370" x2="505" y2="390" stroke="#ffffff" stroke-width="2.5"/>
+    <line x1="535" y1="370" x2="535" y2="390" stroke="#ffffff" stroke-width="2.5"/>
+
+    <text x="520" y="405" text-anchor="middle" font-size="20" font-family="serif" fill="#ffffff" opacity="0.95">δ</text>
+
+    <line x1="495" y1="340" x2="545" y2="340" stroke="#ffffff" stroke-width="3"/>
+    <line x1="505" y1="332" x2="505" y2="348" stroke="#ffffff" stroke-width="2.5"/>
+    <line x1="535" y1="332" x2="535" y2="348" stroke="#ffffff" stroke-width="2.5"/>
+
+    <text x="520" y="325" text-anchor="middle" font-size="20" font-family="serif" fill="#ffffff" opacity="0.95">ε</text>
+  </g>
+
+  <!-- ======================= ALGEBRA ======================= -->
+  <g id="algebra-icon">
+    <polygon points="640,430 588,400 588,340 640,310 692,340 692,400"
+             fill="none" stroke="#ffffff" stroke-width="5" stroke-linejoin="round"/>
+
+    <g stroke="#ffffff" stroke-width="4" stroke-linejoin="round">
+      <line x1="640" y1="310" x2="640" y2="430"/>
+      <line x1="640" y1="310" x2="588" y2="400"/>
+      <line x1="640" y1="310" x2="692" y2="400"/>
+      <line x1="640" y1="430" x2="588" y2="340"/>
+      <line x1="640" y1="430" x2="692" y2="340"/>
+      <line x1="588" y1="400" x2="692" y2="340"/>
+      <line x1="692" y1="400" x2="588" y2="340"/>
+    </g>
+  </g>
+
+  <!-- ======================= GEOMETRY ======================= -->
+  <g id="geometry-icon">
+    <polygon points="780,400 820,400 780,331"
+             fill="none" stroke="#ffffff" stroke-width="4.5" stroke-linejoin="round"/>
+
+    <polyline points="780,390 790,390 790,400"
+              fill="none" stroke="#ffffff" stroke-width="3.2"/>
+
+    <polygon points="780,400 820,400 820,440 780,440"
+             fill="none" stroke="#ffffff" stroke-width="4"/>
+    <polygon points="780,400 780,331 711,331 711,400"
+             fill="none" stroke="#ffffff" stroke-width="4"/>
+
+    <!-- Hypotenuse square OUTWARD -->
+    <polygon points="780,331 820,400 889,360 849,291"
+             fill="none" stroke="#ffffff" stroke-width="4"/>
+  </g>
+
+  <!-- ======================= TOPOLOGY (shifted right +90, up 20) ======================= -->
+  <g id="topology-icon" transform="translate(90,-20)">
+    <ellipse cx="880" cy="340" rx="60" ry="22"
+             fill="none" stroke="#ffffff" stroke-width="4"/>
+
+    <ellipse cx="880" cy="340" rx="48" ry="16"
+             fill="none" stroke="#ffffff" stroke-width="3"/>
+
+    <path d="M 820 340
+             L 820 405
+             C 820 425, 840 440, 880 440
+             C 920 440, 940 425, 940 405
+             L 940 340"
+          fill="none" stroke="#ffffff" stroke-width="4"/>
+
+    <path d="M 820 405
+             C 840 415, 920 415, 940 405"
+          fill="none" stroke="#ffffff" stroke-width="4"/>
+
+    <path d="M 940 360
+             C 980 360, 1010 380, 1010 410
+             C 1010 440, 980 460, 940 420"
+          fill="none" stroke="#ffffff" stroke-width="4"/>
+
+    <path d="M 940 370
+             C 975 370, 990 385, 990 410
+             C 990 432, 975 445, 950 430
+             L 940 422"
+          fill="none" stroke="#ffffff" stroke-width="3"/>
+
+    <path d="M 940 420 L 940 340"
+          fill="none" stroke="#ffffff" stroke-width="4"/>
+
+    <!-- Steam -->
+    <path d="M 865 310 C 860 300, 860 290, 865 280"
+          fill="none" stroke="#ffffff" stroke-width="2.5"/>
+    <path d="M 895 310 C 890 300, 890 290, 895 280"
+          fill="none" stroke="#ffffff" stroke-width="2.5"/>
+  </g>
+
+</svg>
