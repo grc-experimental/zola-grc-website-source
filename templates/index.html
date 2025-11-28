@@ -8,14 +8,39 @@
     <!-- Left: bio / mathematical identity -->
     <section class="bio">
         <header class="bio-header">
-            <div class="bio-avatar">
-                <img src="{{ get_url(path='images/ProfilePic') }}" alt="Ruo-Chen Gu">
+            <div class="bio-header-main">
+                <div class="bio-avatar">
+                    <img src="{{ get_url(path='images/ProfilePic') }}" alt="Ruo-Chen Gu">
+                </div>
+                <div class="bio-heading-block">
+                    <h1 class="bio-name">Ruo-Chen Gu</h1>
+                    <p class="bio-tagline">Master's student in mathematics, UW–Madison</p>
+                </div>
             </div>
-            <div class="bio-heading-block">
-                <h1 class="bio-name">Ruo-Chen Gu</h1>
-                <p class="bio-tagline">Master's student in mathematics, UW–Madison</p>
+            <div class="bio-header-actions">
+                <a href="/blog/" class="bio-header-pill">
+                    <span class="icon-wrap">
+                        <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                            <path d="M12 20h9" stroke-width="2" stroke-linecap="round"/>
+                            <path d="M16.5 3.5l4 4L10 18l-4 1 1-4 10.5-11.5z" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    </span>
+                    Blog
+                </a>
+
+                <a href="/notes/" class="bio-header-pill">
+                    <span class="icon-wrap">
+                        <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                            <rect x="3" y="4" width="14" height="16" rx="2" stroke-width="2"/>
+                            <path d="M7 8h6M7 12h6M7 16h3" stroke-width="2" stroke-linecap="round"/>
+                            <path d="M19 4v16" stroke-width="2"/>
+                        </svg>
+                    </span>
+                    Notes
+                </a>
             </div>
         </header>
+
 
         <div class="bio-layout">
             <nav class="bio-nav">
