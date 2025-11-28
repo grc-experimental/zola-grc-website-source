@@ -357,6 +357,7 @@ function initTerminal() {
 
   printLine("grc@⊢:~   —   foundations, logic, ATP", { className: "system" });
   printLine("Welcome to grc's terminal.", { className: "system" });
+  printLine("Site is optimized for desktop, and may NOT work on mobile.", { className: "system" });
   printLine(
     'UI largely inspired by <a href="https://terminal.jcubic.pl/" target="_blank" rel="noopener noreferrer">jQuery Terminal</a>.',
     { className: "system", asHtml: true }
