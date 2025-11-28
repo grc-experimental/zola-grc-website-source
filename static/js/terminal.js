@@ -298,9 +298,11 @@ if (terminalColumn) {
 }
 
 // Bio cards: vertical index switching
-function initBioCards() {
+function initBioCards() 
+{
   const navItems = document.querySelectorAll(".bio-nav-item");
   const cards = document.querySelectorAll(".bio-card");
+  const definitionGraphic = document.querySelector(".bio-definition-graphic");
 
   if (!navItems.length || !cards.length) {
     return;
@@ -324,6 +326,15 @@ function initBioCards() {
         card.classList.remove("bio-card--active");
       }
     });
+
+    // Toggle definition SVG
+    if (definitionGraphic) {
+      if (key === "definition") {
+        definitionGraphic.classList.add("bio-definition-graphic--visible");
+      } else {
+        definitionGraphic.classList.remove("bio-definition-graphic--visible");
+      }
+    }
   }
 
   // Attach handlers
@@ -337,6 +348,7 @@ function initBioCards() {
     });
   });
 }
+
 
 
 

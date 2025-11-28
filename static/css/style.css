@@ -415,6 +415,24 @@ main {
     border-left-color: #22c55e;
 }
 
+.bio-definition-graphic {
+    display: none;            /* hidden by default; JS or initial class will show it */
+    margin-top: 1rem;
+}
+
+.bio-definition-graphic img {
+    display: block;
+    max-width: 100%;
+    height: auto;
+    margin: 0 auto;
+}
+
+/* Turned on when the definition card is active */
+.bio-definition-graphic--visible {
+    display: block;
+}
+
+
 
 /* Simple "math" typography */
 .math,
