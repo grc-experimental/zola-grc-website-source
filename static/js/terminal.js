@@ -34,10 +34,6 @@ const SECTIONS = {
   blog: "/blog/",
   notes: "/notes/",
   "math-notes": "/notes/",
-  logic: "/logic-atp/",
-  "logic-atp": "/logic-atp/",
-  links: "/links/",
-  about: "/about/"
 };
 
 function scrollToBottom() {
@@ -89,7 +85,7 @@ function handleHelp() {
   printLine("Available commands:", { className: "system" });
   printLine("  help            Show this help message", { className: "system" });
   printLine("  ls              List sections", { className: "system" });
-  printLine("  open <section>  Open a section (blog, notes, logic, about, ...)", {
+  printLine("  open <section>  Open a section (blog, notes)", {
     className: "system"
   });
   printLine("  axioms          Show a few local axioms", { className: "system" });
@@ -103,9 +99,6 @@ function handleLs() {
   printLine("sections/", { className: "system" });
   printLine("  blog", { className: "system" });
   printLine("  notes", { className: "system" });
-  printLine("  logic-atp", { className: "system" });
-  printLine("  links", { className: "system" });
-  printLine("  about", { className: "system" });
 }
 
 function handleAxioms() {
@@ -216,9 +209,6 @@ function handleCommand(rawInput) {
       break;
     case "notes":
       handleOpen("notes");
-      break;
-    case "logic":
-      handleOpen("logic-atp");
       break;
     case "open":
       handleOpen(argStr);
@@ -365,7 +355,7 @@ function initTerminal() {
   // Optional blank line after the banner
   printLine("", { className: "banner" });
 
-  printLine("grc@⊢:~   —   notes in analysis, logic, ATP", { className: "system" });
+  printLine("grc@⊢:~   —   foundations, logic, ATP", { className: "system" });
   printLine("Welcome to grc's terminal.", { className: "system" });
   printLine(
     'UI largely inspired by <a href="https://terminal.jcubic.pl/" target="_blank" rel="noopener noreferrer">jQuery Terminal</a>.',
