@@ -3,7 +3,7 @@ title = "Blog 1 — What Is a foundation?"
 description = "From definition of a category, to the foundation of mathematics."
 date = 2025-12-20
 slug = "what-is-a-foundation"
-draft = false
+draft = true
 +++
 
 
