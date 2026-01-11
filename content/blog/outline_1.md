@@ -1,9 +1,9 @@
 +++
-title = "(Outline) Blog 1 — On Foundations of Mathematics"
+title = "Blog 1 — On Foundations of Mathematics"
 description = "Foundations, infinite regression, category theory, and their necessities"
-date = 2025-12-20
-slug = "On Foundations of Mathematics"
-draft = true
+date = 2026-01-11
+slug = "blog1"
+draft = false
 +++
 
 

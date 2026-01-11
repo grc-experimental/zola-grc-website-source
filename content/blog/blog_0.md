@@ -1,8 +1,8 @@
 +++
-title = "Blog 0 — What Is a Proof?"
+title = "Blog 0 — What is a Proof?"
 description = "An informal analysis of what mathematicians mean by “proof,” prior to any formal foundation."
 date = 2026-01-10
-slug = "what-is-a-proof"
+slug = "blog0"
 draft = false
 +++
 
@@ -11,19 +11,19 @@ draft = false
 
 This discussion is necessarily informal.
 
-The concept of proof precedes any particular foundation, formal language, or proof system. Any attempt to formalize it would already presuppose a notion of proof and is therefore circular. Since the aim here is to clarify what foundations attempt to represent, not to work inside one of them, informality at this stage is unavoidable.
+The concept of proof precedes any particular foundation, formal language, or proof system. Any attempt to formalize it would necessarily presuppose a notion of proof and is therefore circular. Since the aim here is to clarify what foundations attempt to represent, not to work inside one of them, informality at this stage is unavoidable.
 
 ---
 
 ## 1. Proof is conviction
 
-A proof is always a proof **to someone**.
+A proof is always a proof **of something to someone**.
 
 At the most basic level, a proof of a statement A to a person X is that which convinces X that A is true. Conviction is the only direct epistemic contact we ever have with mathematical truth. Validity, rigor, and correctness are not experienced independently of conviction; they are inferred through it.
 
 Mathematics does not, however, collapse into individual subjectivity. When mathematicians speak of *a proof* of a mathematical statement A, without qualification, they are not referring to persuasion of a particular person. They are referring to persuasion of **most mathematicians**.
 
-Accordingly:
+Accordingly, we have the following **two principles**:
 
 > A **proof of a statement A to a person X** is that which convinces X that A is true.
 >
@@ -35,21 +35,25 @@ The phrase “most mathematicians” does not mean a vote over all humans. Such 
 
 ---
 
-## 2. Circularity, regress, and justification
+## 2. Regress and termination
 
-The preceding principles are unavoidably circular: they define proof in terms of conviction and appeal to a community whose members are themselves identified through mathematical practice. This circularity is real—and unavoidable.
+The preceding two principles do not define every notion they employ. They do not define “conviction,” “mathematician,” or “most.” This is not an oversight. It is unavoidable.
 
-Any attempt to eliminate it immediately leads to infinite regress. To make “most mathematicians” precise would require criteria for who counts as a mathematician; those criteria would require justification; that justification would require further criteria, and so on. The chain cannot terminate without circularity.
+Any attempt to define these terms would require further criteria: criteria for who counts as a mathematician, for what constitutes adequate assessment, for what degree of agreement suffices. Those criteria would themselves require justification, leading immediately to further criteria, and so on. The resulting regress has no natural endpoint.
 
-The regress must stop, or no judgment is possible. It stops in practice with the community whose shared training, norms, and standards make sustained mathematical scrutiny possible. This stopping point is not arbitrary. It is forced by inevitability and justified by maximality: there is no larger or more competent class of judges available to a human practice.
+Reasoning cannot proceed under an endless demand for justification. The regress must therefore terminate. It terminates here, by treating certain notions as primitive: conviction, mathematical practice, and the community of mathematicians as it exists in fact.
 
-This notion does not guarantee truth in any absolute or Platonic sense. It cannot. What it provides is the strongest notion available without circularity: convergence of conviction under sustained, expert scrutiny. No sharper, non-question-begging alternative exists.
+This termination is not circular. Nothing is defined in terms of itself. Rather, analysis stops where further analysis would yield no additional explanatory power. This is standard practice in mathematics and logic: definitions do not eliminate primitives; they organize them.
 
-In this sense, proof is not an abstract object floating independently of human judgment. It is stabilized conviction—subjective at its point of contact, objective only through communal robustness.
+The stopping point is not arbitrary. It is forced by inevitability—no foundation-independent termination is available—and justified by maximality. Among human practices, mathematics is distinguished by sustained, disciplined scrutiny, and mathematicians form the largest community capable of carrying it out. There is no broader or more competent class to which judgment could be meaningfully deferred.
+
+What results is not a guarantee of truth in any absolute or Platonic sense. It cannot be. What results is the strongest notion available without regress: convergence of conviction under sustained expert scrutiny. At this point, it is unclear how any strictly sharper alternative could terminate the regress without reintroducing it elsewhere.
+
+In this sense, proof is not an abstract object independent of human judgment. It is conviction stabilized by a mathematical community. Nothing more, nothing less.
 
 ### 2.1. Formal proof in type theory
 
-In type theory, proofs are formal objects governed by precise rules. This is not a counterexample to the present account. It is an instance of representation.
+In type theory, proofs are formal objects governed by precise rules. This is not a counterexample to the present account. It is an instance of a representation of the concept of proof.
 
 Type theory does not discover that proofs are formal objects in essence; it chooses to *represent* proofs as formal objects within a formal system. Such representations are evaluated by how well they encode and preserve the pre-formal notion of proof identified above.
 
