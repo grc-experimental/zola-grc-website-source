@@ -3,7 +3,7 @@ title = "(Outline) Blog 1 — On Foundations of Mathematics"
 description = "Foundations, infinite regression, category theory, and their necessities"
 date = 2025-12-20
 slug = "On Foundations of Mathematics"
-draft = false
+draft = true
 +++
 
 

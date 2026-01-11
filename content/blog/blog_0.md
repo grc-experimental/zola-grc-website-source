@@ -1,262 +1,66 @@
 +++
 title = "Blog 0 — What Is a Proof?"
-description = "On conviction, rigor, foundations, and why ATP and AI don’t redefine proof so much as expose it."
-date = 2025-11-27
+description = "An informal analysis of what mathematicians mean by “proof,” prior to any formal foundation."
+date = 2026-01-10
 slug = "what-is-a-proof"
 draft = false
 +++
 
-Mathematicians speak of “rigorous proofs.”  
-Logicians speak of formal derivations.  
-Lean 4 compiles proof terms.  
-AI models produce arguments that look like proofs until they collapse on inspection.  
 
-Everyone insists they know what a proof is.  
-Everyone uses the same word.
+## 0. Scope and limits
 
-Yet the more seriously you think about it, the more unstable the concept becomes.  
-What, exactly, is a proof? And what convinces a mathematician that something is true?
+This discussion is necessarily informal.
 
-This blog begins there.
+The concept of proof precedes any particular foundation, formal language, or proof system. Any attempt to formalize it would already presuppose a notion of proof and is therefore circular. Since the aim here is to clarify what foundations attempt to represent, not to work inside one of them, informality at this stage is unavoidable.
 
 ---
 
-## 1. Proof as conviction, and why conviction is not simple
+## 1. Proof is conviction
 
-*A proof is whatever convinces me.*
+A proof is always a proof **to someone**.
 
-On its face, that sounds subjective. But look long enough at your own experience of mathematics and the line becomes hard to dismiss. What else do you ever directly experience besides your own state of conviction?
+At the most basic level, a proof of a statement A to a person X is that which convinces X that A is true. Conviction is the only direct epistemic contact we ever have with mathematical truth. Validity, rigor, and correctness are not experienced independently of conviction; they are inferred through it.
 
-You do not touch “mathematical truth.”  
-You do not touch “formal validity.”  
-You touch the moment your mind settles: *this must be correct*.
+Mathematics does not, however, collapse into individual subjectivity. When mathematicians speak of *a proof* of a mathematical statement A, without qualification, they are not referring to persuasion of a particular person. They are referring to persuasion of **most mathematicians**.
 
-But that moment has layers.
+Accordingly:
 
-**Layer 1: Superficial conviction.**  
-A picture “makes it obvious.” A blackboard sketch gestures at a limit argument. Your intuition nods too easily. This conviction is cheap and fragile.
+> A **proof of a statement A to a person X** is that which convinces X that A is true.
+>
+> A **proof of a mathematical statement A (unqualified)** is a proof of A to most mathematicians.
 
-**Layer 2: Technical conviction.**  
-You can rerun the quantifiers. You can check every inequality. You can reproduce the argument in your own notation. This is real work.
+Statements here are not restricted to sentences of a formal language. They include whatever mathematicians take themselves to be asserting, reasoning about, or aiming to establish. Formal sentences appear later as representations of this practice, not as its starting point.
 
-**Layer 3: Structural conviction.**  
-You see why the argument lives in a larger theory. You understand the architecture in which the proof sits.
-
-**Layer 4: Foundational conviction.**  
-You know the constructions underneath: sets, functions, maps, products, relations, all explicitly built.
-
-**Layer 5: Formal conviction.**  
-You can, in principle, descend into explicit syntactic derivations in ZFC or a proof assistant. Nothing depends on intuition alone.
-
-When a trained mathematician says, “I am convinced,” they are drawing on this entire stack, even if unconsciously. Convincing such a mind is not trivial. It is a kind of evidence.
-
-This makes the bold claim oddly attractive:
-
-> A proof is whatever convinces me.
-
-But let’s stress-test it.
-
-### The Pythagorean theorem
-
-Why do you believe \(a^2 + b^2 = c^2\) for right triangles?
-
-- A diagram with squares on the sides?  
-- A similarity-of-triangles argument you once saw?  
-- The area rearrangement proof?  
-- The fact that everyone has repeated it for 2500 years?  
-- The way it fits perfectly into analytic geometry and linear algebra?  
-- The memory that, at some earlier point, you actually understood a full proof?
-
-These are different forms of conviction.
-
-Very few people re-derive Euclid’s entire geometric framework every time. Even fewer think about the theorem as a statement about the flat metric on \(\mathbb{R}^2\), or about how a formalization must ultimately be grounded in sets and axioms.
-
-Yet the theorem feels immovable.
-
-Conviction persists even as the details fade. That already tells you that proof and conviction are not reducible to “what I can currently reconstruct in my head.”
-
-### The forgetting problem
-
-We learn mathematics.  
-We forget mathematics.
-
-You once learned the Dedekind-cut or Cauchy construction of the reals. You probably can’t reproduce the entire construction today without refreshing. You likely can’t recall the full completeness proof, line by line.
-
-Yet you still say: *every Cauchy sequence in \(\mathbb{R}\) converges*.
-
-Why?
-
-Not because your present mind holds the entire argument, but because your conviction rests on a durable equilibrium:
-
-- trust in the mathematics that depends on \(\mathbb{R}\) and has never collapsed,  
-- trust in the intellectual tradition that vetted the construction,  
-- trust in your past self who once understood the proof,  
-- trust in the social structure of mathematics where errors at that depth are vanishingly unlikely to survive.
-
-Conviction is not a flicker of belief. It is a high-dimensional object supported by community, history, structure, and prior effort.
-
-If proof were simply “whatever convinces me,” what happens when I forget the details?  
-Does the theorem evaporate? Does truth depend on my memory?
-
-Obviously not.
-
-So we refine the claim:
-
-> A proof is conviction **disciplined** by a structure larger than the individual mind.
-
-Conviction is necessary.  
-Conviction alone is worthless.
-
-Proof is the marriage of conviction with frameworks that force conviction to survive serious scrutiny.
+The phrase “most mathematicians” does not mean a vote over all humans. Such a democracy would be epistemically meaningless, since most humans lack the background required to assess mathematical arguments. Even within mathematics, competence is domain-specific. Conviction about a statement properly ranges over those mathematicians for whom the statement is intelligible and assessable, just as judgments about culinary claims range over cooks rather than chemists or historians.
 
 ---
 
-## 2. The strata of rigor
+## 2. Circularity, regress, and justification
 
-Those frameworks — the things that discipline conviction — form their own hierarchy. Roughly:
+The preceding principles are unavoidably circular: they define proof in terms of conviction and appeal to a community whose members are themselves identified through mathematical practice. This circularity is real—and unavoidable.
 
-**Layer 0: Naive intuition.**  
-Continuity means “don’t lift the pencil.” Limits converge because “it looks like they do.”
+Any attempt to eliminate it immediately leads to infinite regress. To make “most mathematicians” precise would require criteria for who counts as a mathematician; those criteria would require justification; that justification would require further criteria, and so on. The chain cannot terminate without circularity.
 
-**Layer 1: \(\varepsilon\)–\(\delta\) analysis.**  
-The first real discipline. Explicit quantifiers, explicit conditions, explicit error control.
+The regress must stop, or no judgment is possible. It stops in practice with the community whose shared training, norms, and standards make sustained mathematical scrutiny possible. This stopping point is not arbitrary. It is forced by inevitability and justified by maximality: there is no larger or more competent class of judges available to a human practice.
 
-**Layer 2: Set theory.**  
-What is \(\mathbb{R}\)? What is a function? What is a metric? What is a sequence? Why does “countable” mean what it means?
+This notion does not guarantee truth in any absolute or Platonic sense. It cannot. What it provides is the strongest notion available without circularity: convergence of conviction under sustained, expert scrutiny. No sharper, non-question-begging alternative exists.
 
-**Layer 3: Axiomatic logic and meta-mathematics.**  
-What axioms are we using? Why aren’t we running into paradox? What does “consistency” even mean?
+In this sense, proof is not an abstract object floating independently of human judgment. It is stabilized conviction—subjective at its point of contact, objective only through communal robustness.
 
-**Layer 4: Formal systems (Lean 4, Coq, etc.).**  
-Every inference made explicit. No gaps. No appeals to intuition. No hand-waving allowed.
+### 2.1. Formal proof in type theory
 
-A proof moves “further” when it survives more layers.  
-Not more *people* — more *filters*.
+In type theory, proofs are formal objects governed by precise rules. This is not a counterexample to the present account. It is an instance of representation.
 
-Different mathematicians stop at different layers.  
-Different fields demand different stopping points.
+Type theory does not discover that proofs are formal objects in essence; it chooses to *represent* proofs as formal objects within a formal system. Such representations are evaluated by how well they encode and preserve the pre-formal notion of proof identified above.
+
+This discussion concerns that notion itself, not any particular encoding of it.
 
 ---
 
-## 3. Why most mathematicians stop at \(\varepsilon\)–\(\delta\)
+## 3. Conclusion and forward pointer
 
-For most fields, \(\varepsilon\)–\(\delta\) is the equilibrium point where rigor stabilizes. It is not a compromise; it is the optimal layer.
+Proof, at its core, is conviction stabilized by a mathematical community. Any account of foundations that fails to respect this invariant misdescribes mathematical practice.
 
-Three forces align here:
+Foundations arise as formal representations of this phenomenon. They do not define proof; they attempt to encode it.
 
-**1. Conceptual clarity.**  
-\(\varepsilon\)–\(\delta\) killed the vagueness of early calculus and made analysis a reliable engine.
-
-**2. Fruitfulness.**  
-Measure theory, PDE, stochastic processes, differential geometry, spectral theory — the entire architecture of modern analysis — relies on \(\varepsilon\)–\(\delta\) precision.
-
-**3. Physics and engineering actually work.**  
-Differential equations model reality with shocking accuracy. That success spills backward and stabilizes confidence in the mathematical structures that enable them.
-
-Most mathematicians have no need to descend beneath \(\varepsilon\)–\(\delta\).  
-This is not intellectual weakness.  
-This is **division of labor**.
-
-A geometer’s anxiety is not about set-theoretic encoding; it is about curvature and smoothness.  
-An analyst’s anxiety is not about the Axiom of Replacement; it is about compactness and convergence.  
-A logician’s anxiety is not about boundary conditions; it is about hidden assumptions in inference rules.
-
-Different problems press on different fault lines.
-
----
-
-## 4. Where mathematics gets its credibility
-
-Here is the bold claim:
-
-> The external credibility of mathematics comes from physics.
-
-If mathematics had never predicted anything, controlled anything, or built anything, it would not hold its current position in civilization. Physics and technology are the engines that grant mathematics its external authority.
-
-But **internal** credibility is different.
-
-- \(\sqrt{2}\) exposed holes in Greek arithmetic.  
-- Zeno’s paradox exposed incomplete notions of infinity and summation.  
-- Russell’s paradox exposed naïve set theory.  
-
-Each crisis forced mathematics to raise its standards: better definitions, sharper frameworks, more disciplined proofs.
-
-Then there is coherence. Theories that unify disparate phenomena, resolve contradictions, and produce new theorems at scale earn our trust because everything starts to fit.
-
-\(\varepsilon\)–\(\delta\) analysis sits precisely where these forces reinforce each other:
-
-- internally coherent,  
-- externally validated by physics,  
-- structurally productive.
-
-No surprise that it feels like the natural stopping point for most mathematicians.
-
----
-
-## 5. Gödel and the ceiling above foundations
-
-Push deep enough and you hit a ceiling.
-
-No consistent system strong enough to express arithmetic can prove its own consistency.  
-No axioms can guarantee absolute safety from the inside.  
-No formal system can escape incompleteness.
-
-Foundations give transparency, not final certainty.  
-They let us see which assumptions we rely on; they do not eliminate assumptions.
-
-There is no bottom.  
-Only clearer layers.
-
-This is not a flaw. It is information about what “rigor” can and cannot deliver.
-
----
-
-## 6. ATP, AI, and the new layer
-
-AI makes the epistemic situation both better and worse.
-
-Worse, because AI can generate arguments that *look* convincing but are structurally unsound.  
-Better, because automated theorem provers and proof assistants enforce a standard of explicitness that no human mind can maintain unaided.
-
-The emerging paradigm is:
-
-- human intuition to see structure,  
-- AI to explore and suggest,  
-- ATP (e.g. Lean 4) to enforce correctness.
-
-Proof becomes a three-way collaboration between intuition, search, and formal verification.  
-This is not a replacement for mathematical thought. It is an extension of rigor into places where our informal checking simply doesn’t scale.
-
----
-
-## 7. My trajectory — pressure, not preference
-
-My academic trajectory was not a sequence of elective tastes.  
-It was shaped by pressure.
-
-Finance and computer science forced me into calculus — the language of optimization and modeling.  
-Calculus, taught sloppily, forced me into analysis because hand-waving stopped being acceptable.  
-Analysis forced me into pure mathematics as I saw how much hidden structure underlies even simple concepts.  
-Pure mathematics forced me into foundations when I realized the entire edifice rests on axioms and constructions I could no longer ignore.  
-Foundations forced me into logic, because understanding what a proof *is* requires understanding the rules that define proof.  
-Logic forced me into ATP and Lean 4, because formalization is the natural endpoint of raising standards.
-
-Each step came from a question the previous level could not answer.
-
-This is not ambition or fashion.  
-It is simply where my sense of conviction stopped being satisfied.
-
----
-
-## 8. Closing vector
-
-A proof is conviction disciplined by structure.  
-Mathematics advances by tightening the standards of what we allow to convince us.  
-Each layer — \(\varepsilon\)–\(\delta\), set theory, logic, formalization — is another refinement of that discipline.
-
-AI and ATP are the newest tools in that centuries-long project.  
-They do not redefine proof.  
-They expose it.
-
-This blog is where I work through that intersection for myself:  
-intuition, rigor, and the formal machinery that binds them.
+The next blog asks what a foundation is, given this constraint.
